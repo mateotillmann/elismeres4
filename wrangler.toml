@@ -1,0 +1,17 @@
+name = "employee-reward-tracker"
+compatibility_date = "2023-12-01"
+
+[build]
+command = "npm run build"
+output_dir = ".next"
+
+[site]
+bucket = ".next"
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Define KV namespaces to replace Redis
+kv_namespaces = [
+  { binding = "EMPLOYEE_KV", id = "YOUR_KV_ID_HERE" }
+]
